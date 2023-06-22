@@ -1,0 +1,25 @@
+{
+  "name": "oh-my-gif",
+  "version": "1.0.0",
+  "description": "GIF maker",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "GiF"
+  ],
+  "author": "munan",
+  "license": "ISC",
+  "dependencies": {
+    "ffmpeg-static": "^5.1.0",
+    "fluent-ffmpeg": "^2.1.2"
+  },
+  "devDependencies": {
+    "electron": "^25.2.0",
+    "electron-builder": "^24.4.0",
+    "tailwindcss": "^3.3.2"
+  }
+}

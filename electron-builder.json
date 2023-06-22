@@ -1,0 +1,39 @@
+{
+    "appId": "io.github.munan56",
+    "productName": "oh-my-gif",
+    "directories": {
+      "output": "build"
+    },
+    "mac": {
+      "icon": "build/icon.icns",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "linux": {
+      "icon": "build/icon.png",
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "files": [
+      "**/*",
+      "!test/**/*"
+    ],
+   
+    "asarUnpack":[
+      "node_modules/ffmpeg-static/bin/${os}/${arch}/ffmpeg",
+      "node_modules/ffmpeg-static/index.js",
+      "node_modules/ffmpeg-static/package.json"
+       ]
+  }
+  
