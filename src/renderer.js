@@ -10,9 +10,48 @@ const ffmpegPath = require('ffmpeg-static')
 ffmpeg.setFfmpegPath(ffmpegPath)
 console.log(ffmpeg)
 
-// 
-const convertBtn = document.getElementById('convert-btn')
-convertBtn.addEventListener('click', handleButtonClick)
+/**
+ * 拖拽
+ * @param {} event 
+ */
+function handleInputDragover(event){
+  event.preventDefault();
+}
+
+/**
+ * 拖拽
+ * @param {} event 
+ * @param {*} input 
+ */
+function handleInputDrop(event, input){
+  event.preventDefault();
+  const fileList = event.dataTransfer.files;
+  input.value = fileList[0].path;
+  console.log(fileList[0].path);
+}
+
+
+
+
+
+const convertBtn = document.getElementById('convert-btn');
+const videoInput = document.getElementById('videoPath');
+const gifInput = document.getElementById('gifPath');
+convertBtn.addEventListener('click', handleButtonClick);
+videoInput.addEventListener('dragover', handleInputDragover);
+videoInput.addEventListener('drop', (event)=>{
+  handleInputDrop(event, videoInput);
+});
+gifInput.addEventListener('dragover', handleInputDragover);
+gifInput.addEventListener('drop', (event)=>{
+  handleInputDrop(event, gifInput);
+});
+
+
+
+      
+
+
 
 
 function handleButtonClick() {
